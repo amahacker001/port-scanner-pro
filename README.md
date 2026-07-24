@@ -1,14 +1,18 @@
-# 🔍 Port Scanner Pro
+# 🔍 Port Scanner Pro v2
 
-A lightweight Python port scanner for learning and basic security testing.
-
----
-
-## 🚀 Features
-- Scan ports 1–1024
-- Fast and simple
-- Displays open ports clearly
+Advanced multi-threaded port scanner built with Python.
 
 ---
 
-## 📸 Example Output
+## ⚡ Features
+- Multi-threaded scanning (FAST)
+- Custom port ranges
+- Saves results automatically
+- Clean CLI interface
+
+---
+
+## 🚀 Usage
+
+```bash
+python scanner.py
