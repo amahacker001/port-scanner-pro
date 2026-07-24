@@ -1,18 +1,17 @@
-# 🔍 Port Scanner Pro v2
+# 🔥 Recon Pro Max
 
-Advanced multi-threaded port scanner built with Python.
+Advanced reconnaissance toolkit for cybersecurity learners and developers.
 
 ---
 
 ## ⚡ Features
-- Multi-threaded scanning (FAST)
-- Custom port ranges
-- Saves results automatically
-- Clean CLI interface
+
+- 🔍 Port Scanner (fast & multi-threaded)
+- 🌐 Web Info Scanner
+- 🌍 Subdomain Finder
+- 📂 Directory Bruteforce Scanner
+- 📊 Automatic result saving
 
 ---
 
-## 🚀 Usage
-
-```bash
-python scanner.py
+## 📁 Project Structure
