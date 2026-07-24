@@ -1,3 +1,4 @@
+from utils.report import generate_html_report
 from utils.banner import banner
 from scanner.port_scanner import scan_ports
 from scanner.web_info import get_web_info
