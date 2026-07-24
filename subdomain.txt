@@ -1,0 +1,6 @@
+www
+api
+admin
+mail
+test
+dev
