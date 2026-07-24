@@ -15,3 +15,6 @@ Advanced reconnaissance toolkit for cybersecurity learners and developers.
 ---
 
 ## 📁 Project Structure
+git add .
+git commit -m "Add HTML report feature"
+git push origin add-html-report
