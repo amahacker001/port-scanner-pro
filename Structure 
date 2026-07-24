@@ -1,7 +1,0 @@
-port-scanner-pro/
-│── scanner.py
-│── utils.py
-│── README.md
-│── requirements.txt
-│── .gitignore
-│── LICENSE
