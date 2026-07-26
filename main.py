@@ -1,36 +1,46 @@
-from utils.report import generate_html_report
-from utils.banner import banner
-from scanner.port_scanner import scan_ports
-from scanner.web_info import get_web_info
-from scanner.subdomain_finder import find_subdomains
-from scanner.dir_scanner import scan_directories
+import argparse
+import socket
 
-banner()
+def scan_target(target):
+    print(f"\n[+] Starting scan on: {target}\n")
 
-target = input("Enter target (domain/IP): ")
+    try:
+        target_ip = socket.gethostbyname(target)
+        print(f"[+] Resolved IP: {target_ip}\n")
+    except socket.gaierror:
+        print("[-] Invalid target")
+        return
 
-print("""
-[1] Port Scan
-[2] Web Info
-[3] Subdomain Finder
-[4] Directory Scanner
-""")
+    ports = [21, 22, 23, 25, 53, 80, 110, 139, 143, 443, 445, 8080]
 
-choice = input("Select option: ")
+    for port in ports:
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        socket.setdefaulttimeout(1)
 
-if choice == "1":
-    start = int(input("Start port: "))
-    end = int(input("End port: "))
-    scan_ports(target, start, end)
+        result = sock.connect_ex((target_ip, port))
 
-elif choice == "2":
-    get_web_info(target)
+        if result == 0:
+            print(f"[OPEN] Port {port}")
 
-elif choice == "3":
-    find_subdomains(target)
+        sock.close()
 
-elif choice == "4":
-    scan_directories(target)
+    print("\n[+] Scan finished.\n")
 
-else:
-    print("Invalid choice")
+
+def main():
+    parser = argparse.ArgumentParser(description="Port Scanner")
+
+    parser.add_argument(
+        "--target",
+        type=str,
+        required=True,
+        help="Target domain or IP (example: google.com)"
+    )
+
+    args = parser.parse_args()
+
+    scan_target(args.target)
+
+
+if __name__ == "__main__":
+    main()
